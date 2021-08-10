@@ -309,8 +309,12 @@ Estudo dirigido para MCSA prova 70-410','13','354','79.90','40',
  select * from tbl_categoria;
 
 
+ -- No select abaixo, devemos criar uma view para simplificar os codigos
+
+create view vw_livro
+as
  select 
-     tbl_livro.cd_livro,
+    tbl_livro.cd_livro,
     tbl_livro.no_isbn,
     tbl_categoria.ds_categoria,
     tbl_livro.nm_livro,
@@ -319,12 +323,15 @@ Estudo dirigido para MCSA prova 70-410','13','354','79.90','40',
     tbl_livro.vl_preco,
     tbl_livro.qt_estoque,
     tbl_livro.ds_resumo_obra,
-    tbl_livro.ds_obra,
+    tbl_livro.ds_capa,
     tbl_livro.sg_lancamento
 from tbl_livro inner join tbl_autor
     on tbl_livro.cd_autor = tbl_autor.cd_autor
 inner join tbl_categoria
     on tbl_livro.cd_categoria = tbl_categoria.cd_categoria;
- 
+
+select * from vw_livro;
+
+
 
 
