@@ -309,8 +309,8 @@ Estudo dirigido para MCSA prova 70-410','13','354','79.90','40',
  select * from tbl_categoria;
 
 
- select
-    tbl_livro.cd_livro,
+ select 
+     tbl_livro.cd_livro,
     tbl_livro.no_isbn,
     tbl_categoria.ds_categoria,
     tbl_livro.nm_livro,
