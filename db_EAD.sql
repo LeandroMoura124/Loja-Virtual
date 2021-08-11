@@ -332,6 +332,8 @@ inner join tbl_categoria
 
 select * from vw_livro;
 
+create User 'ead'@'localhost' IDENTIFIED WITH mysql_native_password BY '123456';
+grant all privileges on db_EAD.* TO 'ead'@'localhost' with grant option;
 
 
 
