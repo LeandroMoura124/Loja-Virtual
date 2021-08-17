@@ -5,6 +5,7 @@
 <title>Minha Loja</title>
 <meta charset="utf-8"> <!-- indicando o sistema de caractere utf-8 -->
 
+
 <!--
 	o nosso site será responsivo, para isto precisaremos usar uma metatag
 	que irá conter informações da viewport(area que o site aparece no browser)
@@ -25,8 +26,8 @@
 <style type="text/css">
 	.navbar{
 		margin-bottom:0px;
-		background: #f5e5c7;
-	}
+		background-color: #32cfe456;
+}
 </style>
 
 </head>
@@ -50,8 +51,9 @@
 			<?php while($exibe = $consulta->fetch(PDO::FETCH_ASSOC)) {?>
 			<div class="col-sm-3">
 				<img src="imagens/<?php echo $exibe['ds_capa'] ?>.jpg" class="img-responsive" style="width:100%">
-				<div><h1>Nome do produto</h1></div>
-				<div><h4>R$500,00</h4></div>
+				<div><h4><?php echo $exibe['nm_livro']; ?></h4></div>
+				<div><h5><?php echo $exibe['vl_preco']; ?></h5></div>
+
 			</div>
 			<?php } ?>
 			
