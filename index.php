@@ -32,51 +32,28 @@
 </head>
 
 <body>
-	<?php include 'nav.php' ?> <!--A funcionalidade do uso "include", tem como finalidades chamar um arquivo atraves de outro. EX - Coloquei minha nav-bar em outro arquivo e chamei pelo código include 'nav.php'-->
-	<?php include 'cabecalho.html' ?>
+	<!--A funcionalidade do uso "include", tem como finalidades chamar um arquivo atraves de outro. EX - Coloquei minha nav-bar em outro arquivo e chamei pelo código include 'nav.php'-->
+	<?php 
+	 include 'nav.php';
+     include 'cabecalho.html';
+	 include 'conexao2.php';
+
+	// Variavel $consulta vai receber variavel $cn que receberá resultado de uma query.
+    $consulta  = $pdo->query("SELECT*FROM vw_livro");
+
+	?>
+
+	
 
 	<div class="container-fluid">
 		<div class="row">
+			<?php while($exibe = $consulta->fetch(PDO::FETCH_ASSOC)) {?>
 			<div class="col-sm-3">
-				<img src="https://placehold.it/450x320" class="img-responsive" style="width:100%">
+				<img src="imagens/<?php echo $exibe['ds_capa'] ?>.jpg" class="img-responsive" style="width:100%">
 				<div><h1>Nome do produto</h1></div>
 				<div><h4>R$500,00</h4></div>
 			</div>
-			<div class="col-sm-3">
-				<img src="https://placehold.it/450x320" class="img-responsive" style="width:100%">
-				<div><h1>Nome do produto</h1></div>
-				<div><h4>R$500,00</h4></div>
-			</div>
-			<div class="col-sm-3">
-				<img src="https://placehold.it/450x320" class="img-responsive" style="width:100%">
-				<div><h1>Nome do produto</h1></div>
-				<div><h4>R$500,00</h4></div>
-			</div>
-			<div class="col-sm-3">
-				<img src="https://placehold.it/450x320" class="img-responsive" style="width:100%">
-				<div><h1>Nome do produto</h1></div>
-				<div><h4>R$500,00</h4></div>
-			</div>
-			<div class="col-sm-3">
-				<img src="https://placehold.it/450x320" class="img-responsive" style="width:100%">
-				<div><h1>Nome do produto</h1></div>
-				<div><h4>R$500,00</h4></div>
-			</div>
-			<div class="col-sm-3">
-				<img src="https://placehold.it/450x320" class="img-responsive" style="width:100%">
-				<div><h1>Nome do produto</h1></div>
-				<div><h4>R$500,00</h4></div>
-			</div>
-			<div class="col-sm-3">
-				<img src="https://placehold.it/450x320" class="img-responsive" style="width:100%">
-				<div><h1>Nome do produto</h1></div>
-				<div><h4>R$500,00</h4></div>
-			</div>
-			<div class="col-sm-3">
-				<img src="https://placehold.it/450x320" class="img-responsive" style="width:100%">
-				<div><h1>Nome do produto</h1></div>
-				<div><h4>R$500,00</h4></div>
-			</div>
+			<?php } ?>
 			
 		</div><!--Fechando container class row-->
 	</div><!--Fechando container fluid--> 
