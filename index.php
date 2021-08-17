@@ -1,5 +1,5 @@
 
-<! DOCTYPE HTML>
+<!DOCTYPE HTML>
 <html lang="pt-br"> <!-- indicando a linguagem que iremos usar no codigo html -->
 <head>
 <title>Minha Loja</title>
