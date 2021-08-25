@@ -35,15 +35,13 @@
 	<!--A funcionalidade do uso "include", tem como finalidades chamar um arquivo atraves de outro. EX - Coloquei minha nav-bar em outro arquivo e chamei pelo código include 'nav.php'-->
 	<?php 
 	// Chamando outros componentes
+	 include 'nav.php';
+     include 'cabecalho.html';
+	 include 'conexao2.php';
 
-	include 'nav.php';
-	include 'cabecalho.html';
-	include 'conexao2.php';
-	
-	
 
 	// Variavel $consulta vai receber variavel $cn que receberá resultado de uma query.
-    $consulta  = $pdo->query("select nm_livro, vl_preco, ds_capa, qt_estoque from vw_livro");
+    $consulta  = $pdo->query("select nm_livro, vl_preco, ds_capa, qt_estoque from vw_livro where sg_lancamento = 'S'");
 
 	?>
 
@@ -79,6 +77,8 @@
 					<?php } ?>
 					
  				</div>
+
+
 
 			</div>
 			<?php } ?>
