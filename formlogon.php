@@ -11,13 +11,14 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         
         
-    <style>
-    
-    .navbar{
-        margin-bottom: 0;
+    <style type="text/css">
+	.navbar{
+		margin-bottom:0px;
+		background-color: #32cfe456;
     }
-        
-        
+    footer{
+       margin-top: 296px;
+    }
     </style>
         
     
@@ -29,20 +30,21 @@
         include 'nav.php';
         include 'cabecalho.html';
         
-        ?>
+    ?>
         
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-4 col-sm-offset-4"> 
                     <h2>Logon de Usuário</h2>
-                        <div class="form-group">
+                <form name="frmusuario" method="post" action="validausuario.php">
+                    <div class="form-group">
                             <label for="email">Email</label>
-                            <input name="email" type="email" class="form-control" required id="email">
+                            <input name="txtemail" type="email" class="form-control" required id="email">
                         </div>
                     
                     <div class="form-group">
                             <label for="senha">Senha</label>
-                            <input name="senha" type="password" class="form-control" required id="senha">
+                            <input name="txtsenha" type="password" class="form-control" required id="senha">
                     </div>
                             
                     <button type="submit" class="btn btn-lg btn-default">
@@ -52,12 +54,15 @@
                     
                     <button type="submit" class="btn btn-lg btn-link"> 
                         Ainda não sou cadastrado
-                    </button>         
+                    </button>   
+                </form>      
                 </div>
             </div>
         </div>
         
-        <?php include 'rodape.html' ?>
-
+  
+        <?php 
+        include 'rodape.html'
+        ?>
     </body>
 </html>
