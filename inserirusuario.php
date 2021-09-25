@@ -8,7 +8,7 @@ $end = $_POST['txtendereco'];
 $cidade = $_POST['txtcidade'];
 $cep = $_POST['txtcep'];
 
-/* Testando variaveis
+/*                      Testando variaveis
 echo $nome.'<br>';
 echo $email.'<br>';
 echo $senha.'<br>';
