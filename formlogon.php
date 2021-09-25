@@ -52,9 +52,11 @@
                         
                     </button>
                     
-                    <button type="submit" class="btn btn-lg btn-link"> 
+                    <a href="formusuario.php">
+                    <button type="button" class="btn btn-lg btn-link"> 
                         Ainda não sou cadastrado
                     </button>   
+                    </a>
                 </form>      
                 </div>
             </div>

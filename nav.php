@@ -41,14 +41,16 @@
         <?php if(empty($_SESSION['ID'])) { ?>
 		    <li><a href="formlogon.php"><span class="glyphicon glyphicon-log-in"> Logon</a></li>
         <?php } else {
+      if($_SESSION['Status']==0){
         $consulta_usuario = $pdo->query("select nm_usuario from tbL_usuario where cd_usuario = '$_SESSION[ID]' ");
         $exibe_usuario = $consulta_usuario->fetch(PDO::FETCH_ASSOC);
-       
-       ?>
-       
+          ?>
        		<li><a href="#"><span class="glyphicon glyphicon-user"><?php echo $exibe_usuario['nm_usuario'];?> Logon</a></li>
           <li><a href="sair.php"><span class="glyphicon glyphicon-log-out"> Sair</a></li>
-      <?php } ?>
+        <?php } else {?>
+          <li><a href="adm.php"><button class="btn btn-sm btn-danger">Administrador</button></a></li>
+          <li><a href="sair.php"><span class="glyphicon glyphicon-log-out"> Sair</a></li>
+        <?php } }?>
   </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -57,4 +59,3 @@
   
     
 </script>
-
