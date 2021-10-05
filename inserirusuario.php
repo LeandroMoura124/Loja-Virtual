@@ -21,10 +21,14 @@ $consulta = $pdo->query("select ds_email from tbl_usuario where ds_email='$email
 $exibe = $consulta ->fetch(PDO::FETCH_ASSOC);
 
 if($consulta->rowCount() == 1){
-    echo 'Email já cadastrado';
+    header('location:erro1.php');
 }
 else{
-    echo 'Usuário pode ser cadastrado';
+   $incluir = $pdo->query("
+        insert into tbl_usuario(nm_usuario,ds_email,ds_senha,ds_status,ds_endereco,ds_cidade,ds_cep)
+        Values('$nome', '$email', '$senha', '0', '$end', '$cidade', '$cep')");
+        
+        header('location:ok.php');
 }
 
 ?>

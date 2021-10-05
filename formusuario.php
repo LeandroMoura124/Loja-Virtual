@@ -16,15 +16,13 @@
 <script src="jquery.mask.js"></script>
 	
 	
-<style>
-
-.navbar{
-	margin-bottom: 0;
+<style type="text/css">
+	.navbar{
+		margin-bottom:0px;
+		background-color: #32cfe456;
 }
-	
-	
-	
 </style>
+
 	
 <script>
 	
