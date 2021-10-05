@@ -26,7 +26,7 @@ if($consulta->rowCount() == 1){
 else{
    $incluir = $pdo->query("
         insert into tbl_usuario(nm_usuario,ds_email,ds_senha,ds_status,ds_endereco,ds_cidade,ds_cep)
-        Values('$nome', '$email', '$senha', '0', '$end', '$cidade', '$cep')");
+        Values                  ('$nome', '$email', '$senha', '0', '$end', '$cidade', '$cep')");
         
         header('location:ok.php');
 }

@@ -20,7 +20,7 @@
 	.navbar{
 		margin-bottom:0px;
 		background-color: #32cfe456;
-}
+	}
 </style>
 
 	
