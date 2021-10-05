@@ -18,7 +18,7 @@
 	
 	<style type="text/css">
 	.navbar{
-		margin-bottom:0px;
+		margin-bottom: 0px;
 		background-color: #32cfe456;
     }
 </style>
