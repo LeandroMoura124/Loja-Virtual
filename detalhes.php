@@ -38,6 +38,17 @@
 	include 'nav.php';
 	include 'cabecalho.html';
 
+
+	if(!empty($_GET['cd'])){ // se nao estiver vazia a variavel cd
+
+
+	$cd_livro = $_GET['cd'];
+
+	$consulta = $pdo ->query("select * from vw_livro where cd_livro ='$cd_livro'");
+	$exibe = $consulta ->fetch(PDO::FETCH_ASSOC); 
+	} else{
+		header('location:index.php');
+	}
 	
 	?>
 	
@@ -51,23 +62,25 @@
 			 
 			 <h1>Detalhes do Produto</h1>
 			 
-			 <img src="https://placehold.it/900x640" class="img-responsive" style="width:100%;">
-		
-				<div class="col-sm-4 col-sm-offset-1" style="margin-top: 10px;"><img src="https://placehold.it/900x640" class="img-responsive"></div>
-				<div class="col-sm-4 col-sm-offset-1" style="margin-top: 10px;"><img src="https://placehold.it/900x640" class="img-responsive"></div>
+			 <img src="Imagens/<?php echo $exibe['ds_capa'];?>.jpg" class="img-responsive" style="width:100%;">
+			
 			
 		</div>
 		
 				
- 		 <div class="col-sm-7"><h1>Nome do Produto</h1>
+ 		 <div class="col-sm-7"><h1><?php echo $exibe['nm_livro'];?></h1>
 		
-		<p>Descrição do Produto</p>
+		<p><?php echo $exibe['ds_resumo_obra'];?></p>
 		
-		<p>Marca</p>
+		<p><b>Número de páginas:</b> <?php echo $exibe['no_pag'];?></p>
 		
-		<p>R$ 0,00</p>
-			 
-			 
+		<p><b>Preço:</b>R$ <?php echo number_format( $exibe['vl_preco'],2,',','.'); ?></p>
+		
+		<p><b>Nome do Autor:</b> <?php echo $exibe['nm_autor'];?></p>
+		<p><b>ISBN do livro:</b> <?php echo $exibe['no_isbn'];?></p>
+
+
+		
 		<button class="btn btn-lg btn-success">Comprar</button>
 				
 		</div>		
