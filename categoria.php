@@ -35,9 +35,11 @@
 	<!--A funcionalidade do uso "include", tem como finalidades chamar um arquivo atraves de outro. EX - Coloquei minha nav-bar em outro arquivo e chamei pelo código include 'nav.php'-->
 	<?php 
         // Chamando outros componentes
+		session_start();
+		include 'conexao2.php';
         include 'nav.php';
         include 'cabecalho.html';
-        include 'conexao2.php';
+        
 
         $cat = $_GET['cat'];
 

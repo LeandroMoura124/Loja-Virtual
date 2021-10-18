@@ -5,8 +5,8 @@
     session_start(); // iniciando uma sessão
    
 
-    $Vemail = $_POST['txtemail'];
-    $Vsenha = $_POST['txtsenha'];
+    $Vemail = $_POST['txtemail']; //orlindo@gmail.com
+    $Vsenha = $_POST['txtsenha']; //orlindo123
 
 
     //echo $Vemail.'<br>';
