@@ -62,7 +62,7 @@
 			 
 			 <h1>Detalhes do Produto</h1>
 			 
-			 <img src="Imagens/<?php echo $exibe['ds_capa'];?>.jpg" class="img-responsive" style="width:100%;">
+			 <img src="Imagens/<?php echo $exibe['ds_capa'];?>" class="img-responsive" style="width:100%;">
 			
 			
 		</div>
