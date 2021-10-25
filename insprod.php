@@ -1,5 +1,9 @@
 <?php
 include 'conexao2.php';
+include 'resize-class.php';
+
+
+
 
 $isbn = $_POST['txtisbn'];
 $cd_cat = $_POST['sltcat'];
@@ -32,6 +36,13 @@ try{
 
 $inserir=$pdo->query("insert into tbl_livro(no_isbn, cd_categoria, nm_livro, cd_autor, no_pag, vl_preco, qt_estoque, ds_resumo_obra, ds_capa, sg_lancamento) 
                                     VALUES ('$isbn', '$cd_cat', '$nome_livro', '$cd_autor', '$nopag', '$preco', '$qtde', '$resumo', '$img_nome1', '$lanc')");
+            move_uploaded_file($recebe_foto1['tmp_name'], $destino.$img_nome1);
+            $resizeObj = new resize($destino.$img_nome1);
+            $resizeObj -> resizeImage(340, 480, 'crop');
+            $resizeObj -> saveImage($destino.$img_nome1, 100);
+
+header('location:index.php');
+
 
 }catch(PDOException $e) {
 
