@@ -18,7 +18,8 @@
 	<style>
 	
 	.navbar{
-		margin-bottom: 0;
+		margin-bottom: 0px;
+        background-color: #32cfe456;
 	}
 	
 	

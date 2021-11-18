@@ -47,7 +47,7 @@
 		
 		<div class="col-sm-1 col-xs-offset-right-1" style="padding-top:20px">
 		
-		<!--remove o item do carrinho pelo id -->
+		<!--remove o item do carrinho pelo código -->
 		<a href="removeCarrinho.php?cd=<?php echo $cd;?>">	
 		<button class="btn btn-lg btn-block btn-danger">
 		<span class="glyphicon glyphicon-remove"></span>		
